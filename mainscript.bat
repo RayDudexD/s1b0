@@ -38,6 +38,8 @@ if errorlevel 2 goto :funstuff
 if errorlevel 1 goto :CMD
 
 :secret
+cls
+echo Look in the source code, specifically in the ':secret' section, to find the passwords.
 set /p "pass=Enter a password...: "
 set "correctPassword=kencarson2025realinhindi"
 set "turskueasteregg=goodbro2025"
@@ -157,9 +159,9 @@ if errorlevel 1 goto :qrgenerator
 :joke
 setlocal enabledelayedexpansion
 set /a "rand=%random% %% 3"
-if !rand!==0 echo "Why did the computer go to therapy? It had too many bytes!"
-if !rand!==1 echo "What’s a computer’s favorite snack? Microchips!"
-if !rand!==2 echo "Why did the programmer quit his job? Because he didn't get arrays!"
+if !rand!==0 echo Why did the computer go to therapy? It had too many bytes!
+if !rand!==1 echo What's a computer's favorite snack? Microchips!
+if !rand!==2 echo Why did the programmer quit his job? Because he didn't get arrays!
 endlocal
 pause
 goto :funstuff
@@ -193,7 +195,7 @@ goto :funstuff
 
 
 :ascii_art
-echo ASCII Art Generator
+echo Welcome to the ASCII Art Generator!
 set /p "art_text=Enter the text you want in ASCII Art: "
 echo.
 echo %art_text% in ASCII Art!
@@ -279,6 +281,6 @@ echo C:::::CCCCCCCC::::C      TT:::::::TT            TT:::::::TT
 echo CC:::::::::::::::C       T:::::::::T            T:::::::::T
 echo CCC::::::::::::C         T:::::::::T            T:::::::::T
 echo  CCCCCCCCCCCCC          TTTTTTTTTTT            TTTTTTTTTTT
-echo Use the amazing CTT tool!
+echo Use the amazing CTT tool on your Windows 11 PC/Laptop!
 pause
 goto :mainmenu
