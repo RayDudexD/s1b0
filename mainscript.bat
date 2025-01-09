@@ -68,6 +68,7 @@ if "%pass%"=="%correctPassword%" (
 :settings
 cls
 echo This section is not finished yet!
+pause
 goto :mainmenu
 
 :IPPrem
