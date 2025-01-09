@@ -215,7 +215,9 @@ cls
 echo The page to which the QR code should refer:
 set /p page="Enter URL for the QR code: "
 
-curl "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=%page%" -o "%USERPROFILE%\Desktop\QRCode.png"
+set "encodedPage="
+for %%A in (%page%) do set "encodedPage=!encodedPage!%%A%%20"
+curl "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=%encodedPage%" -o "%USERPROFILE%\Desktop\QRCode.png"
 
 echo QR code has been generated and saved on your desktop as 'QRCode.png'.
 pause
@@ -228,11 +230,11 @@ setlocal enabledelayedexpansion
 set "code="
 for /l %%i in (1,1,16) do (
     set /a "digit=!random! %% 10"
-    set "code=!code!!digit!"
-)
-echo Generated Paysafecard-like Code: %code%
+echo Generated Paysafecard-like Code: !code!
 endlocal
 pause
+timeout /t 2 >nul
+goto :funstuff
 timeout /t 2 >nul
 goto :funstuff
 
